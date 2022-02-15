@@ -136,6 +136,7 @@ SpriteAtlas:
   - {fileID: -2413806693520163455, guid: f4d2275af949023478e586eaa23bf1f5, type: 3}
   - {fileID: 21300000, guid: d883d45b5997cda4ab82010713527127, type: 3}
   - {fileID: 21300000, guid: cca217bb2b878a94f9e34506f9cab828, type: 3}
+  - {fileID: 21300000, guid: 14a86fdb97db1bb4bac88d83eb098380, type: 3}
   - {fileID: 1295749498, guid: bd06198c110691b43adc8c788366fcb9, type: 3}
   - {fileID: -183553961, guid: bd06198c110691b43adc8c788366fcb9, type: 3}
   - {fileID: -848660234, guid: bd06198c110691b43adc8c788366fcb9, type: 3}
@@ -257,6 +258,7 @@ SpriteAtlas:
   - Circle
   - bullet4
   - fish-spaceship-game-character
+  - spr_shield
   - Explosion 2_10
   - Explosion 2_11
   - Explosion 2_9
