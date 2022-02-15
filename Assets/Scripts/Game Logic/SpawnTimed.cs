@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class SpawnTimed : MonoBehaviour
 {
+    static public int spawned = 0;
+
     public GameObject spawnee;
 
     public float radius = 20f;
 
     public float spawnDelay = 1;
+
+    private void Update()
+    {
+        Debug.Log($"{spawned}");
+    }
 
     IEnumerator Start()
     {
@@ -16,6 +23,8 @@ public class SpawnTimed : MonoBehaviour
 
         while(true)
         {
+            spawned++;
+
             Instantiate(
                 spawnee,
                 (Vector2)Camera.main.transform.position +

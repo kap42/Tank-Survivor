@@ -50,6 +50,8 @@ public class Stats : MonoBehaviour
                 transform.position,
                 transform.rotation);
 
+            SpawnTimed.spawned--;
+
             Destroy(gameObject);
 
             return (score, remainingDamage, true);

@@ -25,6 +25,8 @@ public class SpawnClusterTimed : MonoBehaviour
 
             for (int i = 0; i < clusterSize; i++)
             {
+                SpawnTimed.spawned++;
+
                 Instantiate(
                     spawnee,
                     clusterCenter + Random.insideUnitCircle.normalized*clusterRadius,
