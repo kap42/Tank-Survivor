@@ -46,16 +46,19 @@ SpriteAtlas:
   - {fileID: 913056350, guid: 7ffe194183aaaeb4a873f87aa3e8ae0f, type: 3}
   - {fileID: 1081579968, guid: 7ffe194183aaaeb4a873f87aa3e8ae0f, type: 3}
   - {fileID: 21300000, guid: 8e09c202390c3474d9634716957e1b2b, type: 3}
+  - {fileID: 21300000, guid: 25a5f0d20f22d684f9b8599735af7083, type: 3}
   - {fileID: 21300000, guid: 7516d353d2b4a2846a264717573d0649, type: 3}
   - {fileID: 21300000, guid: 49d05b7357de20249819741b12cb32d5, type: 3}
   - {fileID: 21300000, guid: b8c91134e2c19b64889400d809b9d7b0, type: 3}
   - {fileID: 21300000, guid: 454e57641496ca64c9a1f271fc0f82c3, type: 3}
   - {fileID: 21300000, guid: 4ca4d1d43c38ccf46a6c7038a9a620f4, type: 3}
+  - {fileID: 21300000, guid: a9b2dac51bfdbf2469c3d42ea37f373b, type: 3}
   - {fileID: 21300000, guid: 80df0a16a035f5246938e1a5d21d8cb2, type: 3}
   - {fileID: 21300000, guid: 6143c6d63a10a29418e17cf9f3f667d5, type: 3}
   - {fileID: 21300000, guid: 0b631bd692fec374ba2747e8bf0bef6a, type: 3}
   - {fileID: 21300000, guid: 361189e680191084b9114e3a9416c8b4, type: 3}
   - {fileID: 21300000, guid: 2a7a8a47f2ec60646af02aee11f2ae5e, type: 3}
+  - {fileID: 21300000, guid: 77fc08770465b3141830c96086ad054f, type: 3}
   - {fileID: 21300000, guid: 4a337b680db5e8549a22322c5fce58c1, type: 3}
   - {fileID: -1066710663, guid: ad389a78afde119468b6e6646e91c400, type: 3}
   - {fileID: 947120226, guid: ad389a78afde119468b6e6646e91c400, type: 3}
@@ -137,6 +140,7 @@ SpriteAtlas:
   - {fileID: 1529094120, guid: b99d96a90d2951043977528ec2d19945, type: 3}
   - {fileID: -2413806693520163455, guid: f4d2275af949023478e586eaa23bf1f5, type: 3}
   - {fileID: 21300000, guid: d883d45b5997cda4ab82010713527127, type: 3}
+  - {fileID: 21300000, guid: c607a4ab15376254aa37235ad81e3e33, type: 3}
   - {fileID: 21300000, guid: cca217bb2b878a94f9e34506f9cab828, type: 3}
   - {fileID: 21300000, guid: 14a86fdb97db1bb4bac88d83eb098380, type: 3}
   - {fileID: 1295749498, guid: bd06198c110691b43adc8c788366fcb9, type: 3}
@@ -151,9 +155,11 @@ SpriteAtlas:
   - {fileID: -1382096607, guid: bd06198c110691b43adc8c788366fcb9, type: 3}
   - {fileID: 1902002609, guid: bd06198c110691b43adc8c788366fcb9, type: 3}
   - {fileID: 2004405317, guid: bd06198c110691b43adc8c788366fcb9, type: 3}
+  - {fileID: 21300000, guid: ca20be7d092e5a5469dfb0424ff54feb, type: 3}
   - {fileID: 21300000, guid: 8698e0bd357faef45b79b3e4bce256a8, type: 3}
   - {fileID: 21300000, guid: 4acf6e2ebf154af4a91e2e7511c77c01, type: 3}
   - {fileID: 21300000, guid: e9ea165ec4d8cb74ba382025c75ff836, type: 3}
+  - {fileID: 21300000, guid: d367db5e5635e184d885e2db8d9dc95a, type: 3}
   - {fileID: 634624803, guid: bb320bce865510845b22d83dbf38dec4, type: 3}
   - {fileID: 1951340209, guid: bb320bce865510845b22d83dbf38dec4, type: 3}
   - {fileID: 1425246444, guid: bb320bce865510845b22d83dbf38dec4, type: 3}
@@ -223,16 +229,19 @@ SpriteAtlas:
   - tank1_3
   - tank1_2
   - sea_mine_01
+  - liquidWater
   - spaceship01
   - bullet2
   - propeller_airplane
   - M484VerticalShmupSet2
   - bullet1
+  - snowCenter
   - WarShip1
   - armysheet1
   - tanky
   - bullet3
   - jeepll3
+  - dirtCenter
   - tanksgb3
   - spritesheet_tiles_8
   - spritesheet_tiles_9
@@ -314,6 +323,7 @@ SpriteAtlas:
   - upclaose_1
   - Circle
   - bullet4
+  - sandCenter
   - fish-spaceship-game-character
   - spr_shield
   - Explosion 2_10
@@ -328,9 +338,11 @@ SpriteAtlas:
   - Explosion 2_6
   - Explosion 2_5
   - Explosion 2_4
+  - castleCenter
   - Smiling-spaceship-game-character
   - copib5kw9
   - shipsry8
+  - grassCenter
   - tank2_2
   - tank2_3
   - tank2_0
