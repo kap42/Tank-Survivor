@@ -52,15 +52,15 @@ public class PlayerSmartMissile : MonoBehaviour
 
         Vector3 vAngle = new Vector3(0, 0, 0);
 
+        var cf = new ContactFilter2D();
+
+        cf.SetLayerMask(includeMask);
+
         while (true)
         {
             if (currentTarget == null || retargetTime < Time.time)
             {
                 retargetTime = Time.time + retargetDelay;
-
-                var cf = new ContactFilter2D();
-
-                cf.SetLayerMask(includeMask);
 
                 int targetsFound = Physics2D.OverlapCircle(
                     transform.position, 20f,

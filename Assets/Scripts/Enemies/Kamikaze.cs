@@ -6,8 +6,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Kamikaze : MonoBehaviour
 {
+    // Used for debug/stats
     public static int spawned = 0;
 
+    /// <summary>
+    /// What should be spawned after trigger time
+    /// </summary>
     public GameObject explosion;
 
     public string targetName = "Tank";
@@ -15,7 +19,7 @@ public class Kamikaze : MonoBehaviour
 
     public float moveSpeed = 2f;
 
-    public float squaredTriggerDistance = 5f;
+    public float squaredTriggerDistance = 25f;
     public float detonateTime = 2f;
 
     public float minRandTime = .5f;
@@ -61,13 +65,13 @@ public class Kamikaze : MonoBehaviour
 
                 float newAngle = Vector2.SignedAngle(Vector2.up, dir);
 
-                newAngle = transform.rotation.eulerAngles.z;
-
                 dir =
                     Quaternion.Slerp(
                         transform.rotation,
-                    Quaternion.Euler(0, 0, newAngle), .05f)
+                        Quaternion.Euler(0, 0, newAngle), .05f)
                     * Vector2.up;
+                newAngle = transform.rotation.eulerAngles.z;
+
 
                 dir *= 10;
 

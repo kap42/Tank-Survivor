@@ -9,6 +9,8 @@ public class RandomEnemy : MonoBehaviour
     public float minDelay = .5f;
     public float maxDelay = 2f;
 
+    public float maxAway = 400;
+
     Rigidbody2D rb;
 
     SpriteRenderer sr;
@@ -34,9 +36,20 @@ public class RandomEnemy : MonoBehaviour
 
         Kamikaze.spawned++;
 
+        Vector2 dir;
+
         while (true)
         {
-            rb.velocity = Random.insideUnitCircle * maxMagnitude;
+            dir = Camera.main.transform.position - transform.position;
+
+            if (dir.sqrMagnitude > maxAway)
+            {
+                rb.velocity = dir.normalized * maxMagnitude;
+            }
+            else
+            {
+                rb.velocity = Random.insideUnitCircle * maxMagnitude;
+            }
 
             float angle = Vector2.SignedAngle(Vector2.up, rb.velocity);
 

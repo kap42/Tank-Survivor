@@ -84,7 +84,7 @@ public class PlayerActiveMine : MonoBehaviour
 
             if (explosion != null)
             {
-                GameObject go = Instantiate(
+                var go = Instantiate(
                     explosion,
                     transform.position,
                     transform.rotation);

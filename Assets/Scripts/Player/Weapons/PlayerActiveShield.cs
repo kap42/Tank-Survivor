@@ -58,25 +58,25 @@ public class PlayerActiveShield : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        HandleBullet(collision.gameObject);
+        HandleShield(collision.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        HandleBullet(other.gameObject);
+        HandleShield(other.gameObject);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        HandleBullet(other.gameObject);
+        HandleShield(other.gameObject);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        HandleBullet(collision.gameObject);
+        HandleShield(collision.gameObject);
     }
 
-    private void HandleBullet(GameObject collision)
+    private void HandleShield(GameObject collision)
     {
         if (!collision.CompareTag("Friendly") &&
             !collision.CompareTag("Player"))

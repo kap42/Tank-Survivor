@@ -527,3 +527,38 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1230.362322 seconds.
+  path: Assets/Prefabs/Enemies/Boss.prefab
+  artifactKey: Guid(3e8d7fb960307aa45b217d6c9846ebb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/Boss.prefab using Guid(3e8d7fb960307aa45b217d6c9846ebb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd941bb102ab63812bf1eb35ae30890f0') in 0.192112 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Prefabs/Enemies/E UFO.prefab
+  artifactKey: Guid(ca54c91e424bd5b4782db7116969a5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/E UFO.prefab using Guid(ca54c91e424bd5b4782db7116969a5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7faad4165f544caadfa539eebaa55eb5') in 0.038539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Prefabs/Enemies/E Seeker Random.prefab
+  artifactKey: Guid(847413432c28f454eb7957fec1111964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/E Seeker Random.prefab using Guid(847413432c28f454eb7957fec1111964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b28fa33168fa34558e6a225081020c7b') in 0.047415 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Assets/Prefabs/Enemies/Jeep 1.prefab
+  artifactKey: Guid(e7c5ccabb71fbb945b08e1a8cca02432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/Jeep 1.prefab using Guid(e7c5ccabb71fbb945b08e1a8cca02432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ce15c4bd035d05ea1513048fc6c2cac') in 0.037489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Prefabs/Enemies/Mine Row.prefab
+  artifactKey: Guid(e42fd7f1a05728e41b0d8d1e5862900e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/Mine Row.prefab using Guid(e42fd7f1a05728e41b0d8d1e5862900e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '167ff41036b869bc9c2f8a5c517a221f') in 0.036699 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

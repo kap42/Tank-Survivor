@@ -105,6 +105,7 @@ MonoBehaviour:
   maxMagnitude: 10
   minDelay: 0.5
   maxDelay: 2
+  maxAway: 400
 --- !u!114 &-4723706115955328998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +122,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!50 &7539466169664089842
 Rigidbody2D:
