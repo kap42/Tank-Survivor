@@ -41,10 +41,8 @@ public class PlayerActiveWeapon : MonoBehaviour
                     HandleTank.score += score;
                 }
 
-                damage -= remain;
-                Debug.Log(damage);
+                damage = remain;
 
-                damage = 0;
                 if (damage <= 0)
                 {
                     if (explosion != null)
