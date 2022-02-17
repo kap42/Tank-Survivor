@@ -104,6 +104,7 @@ MonoBehaviour:
   spawnee: {fileID: 7539466169664089852, guid: e58f56c079424f84585467eab45e0999, type: 3}
   spawnDelay: 1
   moveSpeed: 0.5
+  mainCam: {fileID: 0}
 --- !u!114 &1531421045546987485
 MonoBehaviour:
   m_ObjectHideFlags: 0

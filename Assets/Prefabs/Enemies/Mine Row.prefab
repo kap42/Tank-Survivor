@@ -141,6 +141,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &70869166640398024
 Animator:
@@ -303,6 +304,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &7865631225933049539
 Animator:
@@ -465,6 +467,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &4480751662180200589
 Animator:
@@ -627,6 +630,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &6956241217462912909
 Animator:
@@ -789,6 +793,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &6584219227796217889
 Animator:
@@ -951,6 +956,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &7891421810638258731
 Animator:
@@ -1113,6 +1119,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &323021402578724318
 Animator:
@@ -1275,6 +1282,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &5123449264325265274
 Animator:
@@ -1437,6 +1445,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &3883871293216714122
 Animator:
@@ -1599,6 +1608,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &697762678614186833
 Animator:
@@ -1761,6 +1771,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &6984953375424646613
 Animator:
@@ -2008,6 +2019,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &7128900800888577226
 Animator:
@@ -2170,6 +2182,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &4971468444024005103
 Animator:
@@ -2332,6 +2345,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &4217310839407197464
 Animator:
@@ -2494,6 +2508,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &502754770039699605
 Animator:
@@ -2656,6 +2671,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &7614959121541344974
 Animator:
@@ -2818,6 +2834,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &7698917541991957630
 Animator:
@@ -2980,6 +2997,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &2509696061791590307
 Animator:
@@ -3142,6 +3160,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &2298543807666175437
 Animator:
@@ -3304,6 +3323,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!95 &6153705144527453852
 Animator:

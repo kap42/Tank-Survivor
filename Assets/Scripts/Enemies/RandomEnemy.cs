@@ -34,8 +34,6 @@ public class RandomEnemy : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        Kamikaze.spawned++;
-
         Vector2 dir;
 
         while (true)

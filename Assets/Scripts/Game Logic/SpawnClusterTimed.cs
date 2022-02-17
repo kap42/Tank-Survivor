@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 public class SpawnClusterTimed : MonoBehaviour
 {
-
     /// <summary>
     /// What to spawn
     /// </summary>
@@ -60,7 +59,7 @@ public class SpawnClusterTimed : MonoBehaviour
 
             for (int i = 0; i < clusterSize; i++)
             {
-                SpawnTimed.spawned++;
+                DebugStats.spawned++;
 
                 Instantiate(
                     spawnee,

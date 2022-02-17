@@ -57,6 +57,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 25a5f0d20f22d684f9b8599735af7083, type: 3}
   - {fileID: 21300000, guid: 7516d353d2b4a2846a264717573d0649, type: 3}
   - {fileID: 21300000, guid: 49d05b7357de20249819741b12cb32d5, type: 3}
+  - {fileID: 21300000, guid: 6c1726f3c0cfd26499381ff240381bbe, type: 3}
   - {fileID: 21300000, guid: b8c91134e2c19b64889400d809b9d7b0, type: 3}
   - {fileID: 21300000, guid: 454e57641496ca64c9a1f271fc0f82c3, type: 3}
   - {fileID: 21300000, guid: 4ca4d1d43c38ccf46a6c7038a9a620f4, type: 3}
@@ -255,6 +256,7 @@ SpriteAtlas:
   - liquidWater
   - spaceship01
   - bullet2
+  - SpellBoundemptya
   - propeller_airplane
   - M484VerticalShmupSet2
   - bullet1

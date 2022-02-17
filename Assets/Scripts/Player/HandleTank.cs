@@ -17,9 +17,11 @@ public class HandleTank : MonoBehaviour
     public int maxHP = 20;
     public int hp = 20;
 
-    public float invincibilityTime = 1f;
+    public float invincibilityTime = .1f;
 
     public float speed = 5;
+
+    public int armour = 1;
 
     public GameObject died;
     public GameObject explosion;
@@ -33,6 +35,8 @@ public class HandleTank : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+
+    public Animator damageIndicator;
 
     private float invincibility = 0;
     Rigidbody2D rb;
@@ -131,7 +135,22 @@ public class HandleTank : MonoBehaviour
             {
                 invincibility = Time.time + invincibilityTime;
 
-                hp -= 1;
+                var s = collision.GetComponent<Stats>();
+
+                int damage = s.damage - armour;
+
+                damage = Mathf.Max(damage, 0);
+
+                hp -= damage;
+
+                if (hp == 0)
+                {
+                    damageIndicator.SetTrigger("Shielded");
+                }
+                else
+                {
+                    damageIndicator.SetTrigger("Damaged");
+                }
 
                 ShowHealth();
 

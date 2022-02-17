@@ -91,7 +91,7 @@ public class Stats : MonoBehaviour
                 transform.rotation);
 
             // Debug/stats
-            SpawnTimed.spawned--;
+            DebugStats.spawned--;
 
             // We should return the object to an object pool instead
             Destroy(gameObject);

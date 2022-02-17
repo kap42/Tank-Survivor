@@ -120,6 +120,7 @@ MonoBehaviour:
   hp: 1
   damage: 1
   armour: 0
+  recoilModifier: 1
   score: 1
 --- !u!50 &-2510230645616717413
 Rigidbody2D:

@@ -1,14 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnTimed : MonoBehaviour
 {
-    /// <summary>
-    /// Debug/stat info
-    /// </summary>
-    static public int spawned = 0;
-
     /// <summary>
     /// What to spawn
     /// </summary>
@@ -29,14 +25,6 @@ public class SpawnTimed : MonoBehaviour
     /// </summary>
     public Transform mainCam;
 
-    /// <summary>
-    /// Debug/stat info
-    /// </summary>
-    private void Update()
-    {
-        Debug.Log($"{spawned}");
-    }
-
     IEnumerator Start()
     {
         if (mainCam == null)
@@ -51,7 +39,7 @@ public class SpawnTimed : MonoBehaviour
         while (true)
         {
             // Debug/stat info
-            spawned++;
+            DebugStats.spawned++;
 
             // Where to spawn
             var pos = Random.insideUnitCircle.normalized * radius;

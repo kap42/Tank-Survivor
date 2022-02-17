@@ -19,13 +19,14 @@ public class PlayerThunder : MonoBehaviour
     /// </summary>
     public float shortRange = 4f;
 
+    public GameObject energySphere;
 
     public int numberOfHits = 4;
     public int damage = 10;
 
     IEnumerator Start()
     {
-        Vector2 dir;
+        yield return new WaitForSeconds(.1f);
 
         // Find all possible targets within range
         Collider2D[] possibleTargets =
@@ -63,7 +64,16 @@ public class PlayerThunder : MonoBehaviour
                 GameObject target = possibleTargets[Random.Range(0, possibleTargets.Length)].gameObject;
 
                 transform.position = target.transform.position;
+
+                GameObject go = Instantiate(
+                    energySphere,
+                    target.transform.position,
+                    Quaternion.identity);
+
+                Destroy(go, .4f);
             }
         }
+
+        Destroy(gameObject,1f);
     }
 }

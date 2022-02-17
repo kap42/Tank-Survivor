@@ -115,8 +115,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.9528302, g: 0.9153139, b: 0, a: 0.75686276}
-      key1: {r: 0.8396226, g: 0.32211402, b: 0.21047142, a: 0.7058824}
+      key0: {r: 0.9528302, g: 0.9153139, b: 0, a: 0.5019608}
+      key1: {r: 0.8396226, g: 0.32211402, b: 0.21047142, a: 0.5019608}
       key2: {r: 0.9622642, g: 0.655807, b: 0.041499224, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -166,8 +166,9 @@ MonoBehaviour:
   includeMask:
     serializedVersion: 2
     m_Bits: 128
-  range: 5
+  range: 10
   shortRange: 4
+  energySphere: {fileID: 6445032602705280929, guid: ec4bec92842b02e4a9f8f0d0f356ad1b, type: 3}
   numberOfHits: 4
   damage: 10
 --- !u!58 &3595256881146985470

@@ -6,9 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Kamikaze : MonoBehaviour
 {
-    // Used for debug/stats
-    public static int spawned = 0;
-
     /// <summary>
     /// What should be spawned after trigger time
     /// </summary>
@@ -44,9 +41,6 @@ public class Kamikaze : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         target = GameObject.Find(targetName)?.transform;
-
-        spawned++;
-        // Debug.Log($"Spawed: {spawned}");
     }
 
     Vector2 dir;
