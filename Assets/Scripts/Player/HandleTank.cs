@@ -17,6 +17,8 @@ public class HandleTank : MonoBehaviour
     public int maxHP = 20;
     public int hp = 20;
 
+    public float invincibilityTime = 1f;
+
     public float speed = 5;
 
     public GameObject died;
@@ -32,6 +34,7 @@ public class HandleTank : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
 
+    private float invincibility = 0;
     Rigidbody2D rb;
     Transform turret;
     Transform muzzle;
@@ -104,6 +107,16 @@ public class HandleTank : MonoBehaviour
     {
         DieAlready(collision.gameObject);
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        DieAlready(collision.gameObject);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        DieAlready(collision.gameObject);
+    }
+
 
     private void DieAlready(GameObject collision)
     {
@@ -114,17 +127,22 @@ public class HandleTank : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Lethal"))
         {
-            hp -= 1;
-
-            ShowHealth();
-
-            if (hp <= 0)
+            if (invincibility < Time.time)
             {
-                died.SetActive(true);
+                invincibility = Time.time + invincibilityTime;
 
-                Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 2);
+                hp -= 1;
 
-                Destroy(gameObject);
+                ShowHealth();
+
+                if (hp <= 0)
+                {
+                    died.SetActive(true);
+
+                    Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 2);
+
+                    Destroy(gameObject);
+                }
             }
         }
     }
