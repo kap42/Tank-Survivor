@@ -39,6 +39,8 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 5749cd405acc8c548ad741c9a68348bc, type: 3}
+  - {fileID: 21300000, guid: 31a7e9604f55ade43981a9d684da28c6, type: 3}
+  - {fileID: 21300000, guid: b3d108c01b62aa94a8c7262e7e282427, type: 3}
   - {fileID: 21300000, guid: b6221011a7461b140800e0a0c815ea30, type: 3}
   - {fileID: 1604566929, guid: 7ffe194183aaaeb4a873f87aa3e8ae0f, type: 3}
   - {fileID: 542113607, guid: 7ffe194183aaaeb4a873f87aa3e8ae0f, type: 3}
@@ -47,6 +49,8 @@ SpriteAtlas:
   - {fileID: 913056350, guid: 7ffe194183aaaeb4a873f87aa3e8ae0f, type: 3}
   - {fileID: 1081579968, guid: 7ffe194183aaaeb4a873f87aa3e8ae0f, type: 3}
   - {fileID: 21300000, guid: dac6e1812bdbad544a52f3ff1c4a9300, type: 3}
+  - {fileID: 21300000, guid: cb9bf5e1de4058747b8d34f7983afb50, type: 3}
+  - {fileID: 21300000, guid: f152fcf10f8790a4ca0c71a50fc0bd1b, type: 3}
   - {fileID: 21300000, guid: 8e09c202390c3474d9634716957e1b2b, type: 3}
   - {fileID: 21300000, guid: 80723012f0619e243a3c91662938ec16, type: 3}
   - {fileID: 21300000, guid: d76c0a92588be6d4d87dac143fd691c4, type: 3}
@@ -56,6 +60,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b8c91134e2c19b64889400d809b9d7b0, type: 3}
   - {fileID: 21300000, guid: 454e57641496ca64c9a1f271fc0f82c3, type: 3}
   - {fileID: 21300000, guid: 4ca4d1d43c38ccf46a6c7038a9a620f4, type: 3}
+  - {fileID: 21300000, guid: 685c729550b9f65448de86fa54eccc8f, type: 3}
   - {fileID: 7482667652216324306, guid: 5f19e1a54a8af8947bf2a88bce5fb653, type: 3}
   - {fileID: 21300000, guid: a9b2dac51bfdbf2469c3d42ea37f373b, type: 3}
   - {fileID: 21300000, guid: 284345d52d3f64a42b112fee19484ab8, type: 3}
@@ -145,6 +150,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: fac56199dc33d99468b86ab2ad4def66, type: 3}
   - {fileID: 1833168151, guid: b99d96a90d2951043977528ec2d19945, type: 3}
   - {fileID: 1529094120, guid: b99d96a90d2951043977528ec2d19945, type: 3}
+  - {fileID: 21300000, guid: e0d2a72a50257fb4681fa0a3754239c3, type: 3}
   - {fileID: -2413806693520163455, guid: f4d2275af949023478e586eaa23bf1f5, type: 3}
   - {fileID: 21300000, guid: d883d45b5997cda4ab82010713527127, type: 3}
   - {fileID: 21300000, guid: c607a4ab15376254aa37235ad81e3e33, type: 3}
@@ -164,6 +170,7 @@ SpriteAtlas:
   - {fileID: 2004405317, guid: bd06198c110691b43adc8c788366fcb9, type: 3}
   - {fileID: 21300000, guid: ca20be7d092e5a5469dfb0424ff54feb, type: 3}
   - {fileID: 21300000, guid: 8698e0bd357faef45b79b3e4bce256a8, type: 3}
+  - {fileID: 21300000, guid: 9bd1a4bd44b5cfd45841819d54cfe75f, type: 3}
   - {fileID: 21300000, guid: 4acf6e2ebf154af4a91e2e7511c77c01, type: 3}
   - {fileID: 21300000, guid: e9ea165ec4d8cb74ba382025c75ff836, type: 3}
   - {fileID: 21300000, guid: d367db5e5635e184d885e2db8d9dc95a, type: 3}
@@ -227,8 +234,11 @@ SpriteAtlas:
   - {fileID: 185600589, guid: 523b92fe2fa0def458525cac411089c1, type: 3}
   - {fileID: 846182381, guid: 523b92fe2fa0def458525cac411089c1, type: 3}
   - {fileID: -66382054, guid: 523b92fe2fa0def458525cac411089c1, type: 3}
+  - {fileID: 21300000, guid: dee1e6feabf7c7e4bba3879ca77bbf40, type: 3}
   m_PackedSpriteNamesToIndex:
   - sea_mine_02
+  - PowerUp_06
+  - PowerUp_08
   - tile_18
   - tank1_5
   - tank1_4
@@ -237,6 +247,8 @@ SpriteAtlas:
   - tank1_3
   - tank1_2
   - tile_03
+  - PowerUp_03
+  - PowerUp_07
   - sea_mine_01
   - tile_02
   - tile_04
@@ -246,6 +258,7 @@ SpriteAtlas:
   - propeller_airplane
   - M484VerticalShmupSet2
   - bullet1
+  - PowerUp_04
   - Square
   - snowCenter
   - tile_01
@@ -335,6 +348,7 @@ SpriteAtlas:
   - ufo
   - upclaose_0
   - upclaose_1
+  - PowerUp_01
   - Circle
   - bullet4
   - sandCenter
@@ -354,6 +368,7 @@ SpriteAtlas:
   - Explosion 2_4
   - castleCenter
   - Smiling-spaceship-game-character
+  - PowerUp_02
   - copib5kw9
   - shipsry8
   - grassCenter
@@ -417,6 +432,7 @@ SpriteAtlas:
   - beams_52
   - beams_51
   - beams_50
+  - PowerUp_05
   m_RenderDataMap: {}
   m_Tag: Sprites
   m_IsVariant: 0

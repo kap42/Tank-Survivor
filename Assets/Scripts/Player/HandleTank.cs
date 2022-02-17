@@ -15,6 +15,7 @@ public class HandleTank : MonoBehaviour
     public string fire = "TriggerRight";
 
     public int maxHP = 20;
+    public int hp = 20;
 
     public float speed = 5;
 
@@ -26,11 +27,10 @@ public class HandleTank : MonoBehaviour
     float highScore = 0;
 
     public Slider health;
+    public Image healthColor;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
-
-    int hp;
 
     Rigidbody2D rb;
     Transform turret;
@@ -129,8 +129,26 @@ public class HandleTank : MonoBehaviour
         }
     }
 
-    void ShowHealth()
+    public void ShowHealth()
     {
-        health.value = (float)hp / (float)maxHP;
+        float HPValue = (float)hp / (float)maxHP;
+
+        health.value = HPValue;
+
+        if (HPValue > .5f)
+        {
+            healthColor.color = Color.green;
+
+            return;
+        }
+
+        if (HPValue > .4f)
+        {
+            healthColor.color = Color.yellow;
+
+            return;
+        }
+
+        healthColor.color = Color.red;
     }
 }
