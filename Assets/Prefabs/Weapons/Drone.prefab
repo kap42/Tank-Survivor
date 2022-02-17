@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 3750504644292242482, guid: 1cb814e8fd6424e47a12de1c7283a148, type: 3}
-  damage: 100
+  damage: 5
   hp: 1
   recoilAmount: 0.1
 --- !u!95 &3270501024806485092

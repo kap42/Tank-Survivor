@@ -14,6 +14,8 @@ public class HandleTank : MonoBehaviour
 
     public string fire = "TriggerRight";
 
+    public int maxHP = 20;
+
     public float speed = 5;
 
     public GameObject died;
@@ -23,8 +25,12 @@ public class HandleTank : MonoBehaviour
     static public bool newHighScore = false;
     float highScore = 0;
 
+    public Slider health;
+
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+
+    int hp;
 
     Rigidbody2D rb;
     Transform turret;
@@ -33,6 +39,8 @@ public class HandleTank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hp = maxHP;
+
         score = 0;
 
         highScore = PlayerPrefs.GetFloat("HighScore", 0);
@@ -42,6 +50,8 @@ public class HandleTank : MonoBehaviour
         Time.timeScale = 1;
 
         rb = GetComponent<Rigidbody2D>();
+
+        ShowHealth();
 
         turret = transform.Find("Turret");
         muzzle = turret?.Find("Muzzle");
@@ -104,11 +114,23 @@ public class HandleTank : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Lethal"))
         {
-            died.SetActive(true);
+            hp -= 1;
 
-            Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 2);
+            ShowHealth();
 
-            Destroy(gameObject);
+            if (hp <= 0)
+            {
+                died.SetActive(true);
+
+                Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 2);
+
+                Destroy(gameObject);
+            }
         }
+    }
+
+    void ShowHealth()
+    {
+        health.value = (float)hp / (float)maxHP;
     }
 }
