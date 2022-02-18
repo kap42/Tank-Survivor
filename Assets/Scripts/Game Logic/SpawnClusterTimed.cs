@@ -36,14 +36,11 @@ public class SpawnClusterTimed : MonoBehaviour
     /// <summary>
     /// Cache the camera
     /// </summary>
-    public Transform mainCam = null;
+    Transform mainCam = null;
     
     IEnumerator Start()
     {
-        if (mainCam == null)
-        {
-            mainCam = Camera.main.transform;
-        }
+        mainCam ??= Camera.main.transform;
 
         // Only use one WFS
         var wfs = new WaitForSeconds(spawnDelay);

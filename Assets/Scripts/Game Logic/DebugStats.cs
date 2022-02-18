@@ -12,18 +12,24 @@ public class DebugStats : MonoBehaviour
     static public int spawned = 0;
 
     /// <summary>
-    /// Debug/stat info
+    /// Show the info in this text object
     /// </summary>
     TMP_Text stats;
+
+    void Start()
+    {
+        stats = GameObject.Find("Stats").GetComponent<TMP_Text>();
+
+        if (stats is null)
+        {
+            Debug.LogError("Couldn't find stats");
+
+            Destroy(this);
+        }
+    }
 
     private void Update()
     {
         stats.text = $"{spawned}";
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        stats = GameObject.Find("Stats").GetComponent<TMP_Text>();
     }
 }

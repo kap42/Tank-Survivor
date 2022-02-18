@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class SimpleTarget : MonoBehaviour
 {
-    public string targetName = "Tank";
-    public string triggerAnimName = "Flash";
-
     public float moveSpeed = 2f;
 
     public float minRandTime = .5f;
@@ -16,6 +13,9 @@ public class SimpleTarget : MonoBehaviour
     public float angleAdjust = -90;
 
     public float maxTurn = 0.05f;
+
+    public string targetName = "Tank";
+    public string triggerAnimName = "Flash";
 
     float randTime = 0;
 
@@ -29,20 +29,20 @@ public class SimpleTarget : MonoBehaviour
 
     Vector3 vAngle = Vector3.zero;
 
+    Vector2 dir = Vector2.zero;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         target = GameObject.Find(targetName)?.transform;
     }
 
     private void Update()
     {
-        Vector2 dir = Vector2.zero;
-
-        if (target != null)
+        if (target is not null)
         {
             dir = target.position - transform.position;
         }

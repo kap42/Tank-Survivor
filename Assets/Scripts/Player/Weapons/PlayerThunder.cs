@@ -21,12 +21,16 @@ public class PlayerThunder : MonoBehaviour
 
     public GameObject energySphere;
 
+    public float moveDelay = .1f;
+
     public int numberOfHits = 4;
     public int damage = 10;
 
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(.1f);
+        var wfs = new WaitForSeconds(moveDelay);
+
+        yield return wfs;
 
         // Find all possible targets within range
         Collider2D[] possibleTargets =
@@ -38,7 +42,10 @@ public class PlayerThunder : MonoBehaviour
         if (possibleTargets.Length > 0)
         {
             // Pick a random target
-            GameObject target = possibleTargets[Random.Range(0, possibleTargets.Length)].gameObject;
+            GameObject target =
+                possibleTargets[
+                    Random.Range(0, possibleTargets.Length)
+                ].gameObject;
 
             transform.position = target.transform.position;
         }
@@ -49,7 +56,7 @@ public class PlayerThunder : MonoBehaviour
 
         for (int i = 1; i < numberOfHits; i++)
         {
-            yield return new WaitForSeconds(.1f);
+            yield return wfs;
 
             // Find all possible targets within range
             possibleTargets =
@@ -58,10 +65,19 @@ public class PlayerThunder : MonoBehaviour
                     shortRange, includeMask);
 
             // Are there any targets available?
-            if (possibleTargets.Length > 0)
+            // If there is only one object, it's this object itself
+            if (possibleTargets.Length > 1)
             {
                 // Pick a random target
-                GameObject target = possibleTargets[Random.Range(0, possibleTargets.Length)].gameObject;
+                GameObject target =
+                    possibleTargets[
+                        Random.Range(0, possibleTargets.Length)
+                    ].gameObject;
+
+                if (target == gameObject)
+                {
+
+                }
 
                 transform.position = target.transform.position;
 

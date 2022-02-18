@@ -38,7 +38,9 @@ public class PlayerActiveShield : MonoBehaviour
 
     private void Update()
     {
-        if (counter++ % (maxDamage - damage + 1) == 0)
+        int finalDamage = Mathf.Max(1, maxDamage - damage + 1);
+
+        if (counter++ % finalDamage == 0)
         {
             spriteColor.r =
             spriteColor.g =

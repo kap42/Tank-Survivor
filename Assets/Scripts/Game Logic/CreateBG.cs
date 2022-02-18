@@ -19,9 +19,18 @@ public class CreateBG : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tilemap = GameObject.Find("Tilemap").GetComponent<Tilemap>();
+        tilemap = GameObject.Find("Tilemap")?.GetComponent<Tilemap>();
 
-        Vector3Int pos = Vector3Int.zero;
+        if (tilemap is null)
+        {
+            Debug.LogError("Couldn't find Tilemap");
+
+            Destroy(this);
+
+            return;
+        }
+
+        var pos = Vector3Int.zero;
 
         for (int y = startY; y < startY+h; y++)
         {

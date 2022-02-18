@@ -11,9 +11,6 @@ public class Kamikaze : MonoBehaviour
     /// </summary>
     public GameObject explosion;
 
-    public string targetName = "Tank";
-    public string triggerAnimName = "Flash";
-
     public float moveSpeed = 2f;
 
     public float squaredTriggerDistance = 25f;
@@ -21,6 +18,9 @@ public class Kamikaze : MonoBehaviour
 
     public float minRandTime = .5f;
     public float maxRandTime = 4f;
+
+    public string targetName = "Tank";
+    public string triggerAnimName = "Flash";
 
     float randTime = 0;
 
@@ -34,22 +34,29 @@ public class Kamikaze : MonoBehaviour
 
     Vector3 vAngle = new Vector3(0, 0, 0);
 
+    Vector2 dir = Vector2.zero;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         target = GameObject.Find(targetName)?.transform;
     }
-
-    Vector2 dir;
 
     void Update()
     {
         if (target != null)
         {
             dir = target.position - transform.position;
+
+            if (dir.sqrMagnitude <= squaredTriggerDistance)
+            {
+                anim.SetTrigger(triggerAnimName);
+
+                Invoke("Explode", detonateTime);
+            }
         }
         else
         {
@@ -64,24 +71,15 @@ public class Kamikaze : MonoBehaviour
                         transform.rotation,
                         Quaternion.Euler(0, 0, newAngle), .05f)
                     * Vector2.up;
+
                 newAngle = transform.rotation.eulerAngles.z;
-
-
-                dir *= 10;
 
                 vAngle.z = newAngle + Random.Range(-10, 10) - 90;
 
                 transform.eulerAngles = vAngle;
 
-                dir = transform.up * 10;
+                dir = transform.up;
             }
-        }
-
-        if (dir.sqrMagnitude <= squaredTriggerDistance)
-        {
-            anim.SetTrigger(triggerAnimName);
-
-            Invoke("Explode", detonateTime);
         }
 
         rb.velocity = dir.normalized * moveSpeed;
@@ -100,10 +98,10 @@ public class Kamikaze : MonoBehaviour
     /// </summary>
     void Explode()
     {
-        Destroy(Instantiate(
+        Instantiate(
             explosion,
             transform.position,
-            Quaternion.identity), 2);
+            Quaternion.identity);
 
         Destroy(gameObject);
     }

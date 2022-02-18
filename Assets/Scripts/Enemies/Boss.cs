@@ -24,28 +24,20 @@ public class Boss : MonoBehaviour
     /// </summary>
     public Transform mainCam;
 
-    /// <summary>
-    /// Cache the Rigidbody2D
-    /// </summary>
-    Rigidbody2D rb;
-
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        // Cache it
-        rb = GetComponent<Rigidbody2D>();
+        // Cache stuff
+        mainCam ??= Camera.main.transform;
 
-        if (mainCam == null)
-        {
-            mainCam = Camera.main.transform;
-        }
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
         // Move towards the center of the screen
         var dir = mainCam.position - transform.position;
 
         rb.velocity = dir.normalized * moveSpeed;
 
-        // Turn the boss in the right direction
+        // Turn the boss in the proper direction
         float angle = Vector2.SignedAngle(Vector2.down, rb.velocity);
 
         transform.eulerAngles = new Vector3(0, 0, angle);
@@ -57,6 +49,7 @@ public class Boss : MonoBehaviour
         {
             yield return wfs;
 
+            // Spawn stuff every now and then
             Instantiate(
                 spawnee,
                 transform.position,

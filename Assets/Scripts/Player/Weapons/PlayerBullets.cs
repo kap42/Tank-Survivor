@@ -1,31 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class PlayerBullets : MonoBehaviour
 {
     /// <summary>
-    /// The Game Object that is to be used as a bullet
+    /// The Game Object that is to be used as a WeaponToLaunch
     /// </summary>
+    [SerializeField]
     public GameObject bullet;
 
     /// <summary>
-    /// Number of bullets currently fired
+    /// Number of numToLaunch currently fired
     /// </summary>
     public int bullets = 1;
 
     /// <summary>
-    /// Spread the bullets within this arc
+    /// Spread the numToLaunch within this arc
     /// </summary>
     public float bulletSpread = 45f;
 
     /// <summary>
-    /// Movement speed of the bullets
+    /// Movement speed of the numToLaunch
     /// </summary>
     public float bulletSpeed = 10;
 
     /// <summary>
-    /// How long to wait between firing the bullets
+    /// How long to wait between firing the numToLaunch
     /// </summary>
     public float bulletCoolDownTime = .1f;
 
@@ -45,7 +48,7 @@ public class PlayerBullets : MonoBehaviour
     public LayerMask includeMask;
 
     /// <summary>
-    /// How often should the turret reaim
+    /// How often should the turret re-aims
     /// </summary>
     public float aimDelay = 1;
 
@@ -60,9 +63,12 @@ public class PlayerBullets : MonoBehaviour
     private Transform turret;
     private float targetAngle = 0;
 
+    const int maxBulletsInPool = 100;
+
+    static public ObjectPool<GameObject> bulletPool;
     void Update()
     {
-        Vector2 dir = Quaternion.Slerp(
+        var dir = Quaternion.Slerp(
             turret.rotation,
             Quaternion.Euler(0, 0, targetAngle), .025f) * Vector2.up;
 
@@ -75,8 +81,24 @@ public class PlayerBullets : MonoBehaviour
 
     IEnumerator Start()
     {
-        // Fail if the bullet isn't set
-        // Used to aim the bullet
+        bulletPool =
+        new ObjectPool<GameObject>(
+            () => (GameObject)Instantiate(bullet),
+            (obj) => obj.SetActive(true),
+            (obj) =>
+            {
+                obj.SetActive(false);
+                var o = obj.GetComponent<PlayerActiveBullet>();
+                o.Reset();
+            },
+            (obj) => Destroy(obj),
+            false,
+            maxBulletsInPool,
+            maxBulletsInPool);
+
+
+        // Fail if the WeaponToLaunch isn't set
+        // Used to aim the WeaponToLaunch
         if (bullet == null)
         {
             Debug.LogError("Bullet isn't set to an object!");
@@ -84,10 +106,10 @@ public class PlayerBullets : MonoBehaviour
             Destroy(this);
         }
 
-        // Find the angle for the bullet
+        // Find the angle for the WeaponToLaunch
         turret = transform.Find("Turret");
-        // From which position should the bullet be fired
-        Transform muzzle = turret?.Find("Muzzle");
+        // From which position should the WeaponToLaunch be fired
+        var muzzle = turret?.Find("Muzzle");
 
         // Fail if parts of the tank isn't found
         if (muzzle == null || turret == null)
@@ -115,7 +137,6 @@ public class PlayerBullets : MonoBehaviour
             {
                 if (nextAim < Time.time)
                 {
-
                     nextAim = Time.time + aimDelay;
 
                     int targetsFound = Physics2D.OverlapCircle(
@@ -151,23 +172,22 @@ public class PlayerBullets : MonoBehaviour
                 }
             }
 
-            // Start angle for the first bullet
+            // Start angle for the first WeaponToLaunch
             float shotAngle =
             (-bulletSpread / 2f) +
             ((bulletSpread / 2f) / bullets);
 
-            // Fire volley of bullets
+            // Fire volley of numToLaunch
             for (int i = 0; i < bullets; i++)
             {
-                // Add a new bullet
+                // Add a new WeaponToLaunch
                 // TODO: Use object pooling
-                var go = Instantiate(
-                    bullet,
-                    muzzle.position,
-                    transform.rotation);
+                var go = bulletPool.Get();
+                go.transform.position = muzzle.position;
+                go.transform.rotation = transform.rotation;
 
                 // Bullets shouldn't exist forever
-                Destroy(go, bulletLifeTime);
+                //                Destroy(go, bulletLifeTime);
 
                 // Fire in this direction
                 var shotDir =
@@ -176,11 +196,11 @@ public class PlayerBullets : MonoBehaviour
                 go.GetComponent<Rigidbody2D>().velocity =
                     bulletSpeed * shotDir;
 
-                // Calculate angle of next bullet
+                // Calculate angle of next WeaponToLaunch
                 shotAngle += bulletSpread / bullets;
             }
 
-            // Wait for next volley of bullets
+            // Wait for next volley of numToLaunch
             yield return wfs;
         }
     }

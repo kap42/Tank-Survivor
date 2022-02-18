@@ -11,6 +11,11 @@ public class RandomEnemy : MonoBehaviour
 
     public float maxAway = 400;
 
+    public float angleAdd = 90;
+
+    public float flipMin = 20;
+    public float flipMax = 270;
+
     Rigidbody2D rb;
 
     SpriteRenderer sr;
@@ -28,8 +33,12 @@ public class RandomEnemy : MonoBehaviour
         new WaitForSeconds(5f),
         };
 
+    private Transform mainCam = null;
+
     IEnumerator Start()
     {
+        mainCam ??= Camera.main.transform;
+
         sr = GetComponent<SpriteRenderer>();
 
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +47,7 @@ public class RandomEnemy : MonoBehaviour
 
         while (true)
         {
-            dir = Camera.main.transform.position - transform.position;
+            dir = mainCam.position - transform.position;
 
             if (dir.sqrMagnitude > maxAway)
             {
@@ -51,9 +60,9 @@ public class RandomEnemy : MonoBehaviour
 
             float angle = Vector2.SignedAngle(Vector2.up, rb.velocity);
 
-            transform.eulerAngles = new Vector3(0, 0, 90 + angle);
+            transform.eulerAngles = new Vector3(0, 0, angleAdd + angle);
 
-            sr.flipY = angle > 20 && angle < 270;
+            sr.flipY = angle > flipMin && angle < flipMax;
 
             yield return wfs[Random.Range(0, wfs.Length)];
         }

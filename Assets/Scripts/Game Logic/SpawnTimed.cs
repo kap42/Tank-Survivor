@@ -23,14 +23,11 @@ public class SpawnTimed : MonoBehaviour
     /// <summary>
     /// Cache the camera
     /// </summary>
-    public Transform mainCam;
+    Transform mainCam = null;
 
     IEnumerator Start()
     {
-        if (mainCam == null)
-        {
-            mainCam = Camera.main.transform;
-        }
+        mainCam ??= Camera.main.transform;
 
         // Only make one copy of the WFS
         var wfs = new WaitForSeconds(spawnDelay);

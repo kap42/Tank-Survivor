@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db1727760060134ead7a88ddbefd218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
+  explosion: {fileID: 3750504644292242482, guid: 1cb814e8fd6424e47a12de1c7283a148, type: 3}
   damage: 1
   hp: 1
   recoilAmount: 0.5

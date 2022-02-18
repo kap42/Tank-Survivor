@@ -31,13 +31,12 @@ public class SpawnOnce : MonoBehaviour
 
     void Start()
     {
-        if (mainCam == null)
-        {
-            mainCam = Camera.main.transform;
-        }
+        mainCam ??= Camera.main.transform;
 
         for (int i = 0; i < numToSpawn; i++)
         {
+            DebugStats.spawned++;
+
             Instantiate(
                 spawnee,
                 (Vector2)mainCam.position +
